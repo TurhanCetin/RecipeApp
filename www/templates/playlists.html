@@ -1,0 +1,26 @@
+<ion-view view-title="YemekApp">
+  <ion-content>
+<style>
+	#row{
+		flex-wrap: wrap;
+	}
+</style>
+
+<div class="list list-inset">
+  <label class="item item-input">
+    <i class="icon ion-search placeholder-icon"></i>
+    <input type="text" placeholder="Search" ng-model="kelime">
+  </label>
+</div>
+{{kelime}}
+
+	  <a class="item item-avatar" ng-repeat="yemek in yemekler | filter:kelime" href="#/app/playlists/{{yemek.id}}">
+      <img src="{{yemek.logo}}">
+      <h2>{{yemek.adi}}</h2>
+      	<h3 style=" border-radius: 10px border-radius-color: #EF473A ">{{yemek.sure}}</h3>
+      <p>{{yemek.kategori}}</p>
+    </a>
+
+    </div>
+  </ion-content>
+</ion-view>
